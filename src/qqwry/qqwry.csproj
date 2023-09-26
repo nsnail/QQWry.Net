@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+    <Import Project="$(SolutionDir)/code.quality.props"/>
+    <ItemGroup>
+        <EmbeddedResource Include="../../assets/qqwrt-20230920.txt"/>
+    </ItemGroup>
+</Project>
