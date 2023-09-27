@@ -31,7 +31,7 @@
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
           <stringProp name="HTTPSampler.domain">localhost</stringProp>
-          <stringProp name="HTTPSampler.port">65512</stringProp>
+          <stringProp name="HTTPSampler.port">61022</stringProp>
           <stringProp name="HTTPSampler.protocol">HTTP</stringProp>
           <stringProp name="HTTPSampler.contentEncoding">utf8</stringProp>
           <stringProp name="HTTPSampler.path">/?ip=${ip1}.${ip2}.${ip3}.${ip4}</stringProp>
