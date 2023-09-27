@@ -19,11 +19,7 @@ internal static class Banner
         var gridWrap      = new Grid().AddColumn();
         var entryAssembly = Assembly.GetEntryAssembly();
         var assemblyName  = entryAssembly!.GetName();
-        foreach (var str in assemblyName.Name!.Split('.')) {
-            _ = gridWrap.AddRow(new FigletText(str).Color(Color.Green));
-            _ = gridWrap.AddRow(string.Empty);
-        }
-
+        _ = gridWrap.AddRow(new FigletText(assemblyName.Name!).Color(Color.Green));
         _ = gridWrap.AddRow(gridInfo);
         AnsiConsole.Write(new Panel(gridWrap)
                           .Header(Assembly.GetExecutingAssembly()
