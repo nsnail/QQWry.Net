@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using System.Reflection;
 using System.Text.Json;
 using Spectre.Console;
@@ -27,7 +26,9 @@ internal static class Banner
 
         _ = gridWrap.AddRow(gridInfo);
         AnsiConsole.Write(new Panel(gridWrap)
-                          .Header(FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly()!.Location).ProductVersion!)
+                          .Header(Assembly.GetExecutingAssembly()
+                                          .GetCustomAttribute<AssemblyInformationalVersionAttribute>()!
+                                          .InformationalVersion)
                           .Expand());
         AnsiConsole.WriteLine();
     }

@@ -18,7 +18,13 @@
 
 ## 开始使用
 - docker 方式
+  - ```docker pull nsnail2/qqwry.net```
+  - ```docker run -p 61022:61022 nsnail2/qqwry.net```
 - 二进制文件方式
+    - 下载地址
+      - [Release](https://github.com/nsnail/QQWry.Net/releases)
     - Windows
+      - 运行 QQWry.Net.exe
     - Linux
+      - ```./```
 - 源码编译方式
