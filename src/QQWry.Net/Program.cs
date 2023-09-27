@@ -3,7 +3,9 @@ using QQWry.Net;
 
 Banner.Show();
 
-var app    = WebApplication.CreateBuilder(args).Build();
+var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.ConfigureKestrel(x => x.ListenAnyIP(61022));
+var app    = builder.Build();
 var logger = app.Services.GetRequiredService<ILogger<Program>>();
 
 logger.LogInformation("正在加载数据...");
