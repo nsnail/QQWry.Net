@@ -18,13 +18,18 @@
 
 ## 开始使用
 - docker 方式
-  - ```docker pull nsnail2/qqwry.net```
   - ```docker run -p 61022:61022 nsnail2/qqwry.net```
 - 二进制文件方式
     - 下载地址
       - [Release](https://github.com/nsnail/QQWry.Net/releases)
     - Windows
-      - 运行 QQWry.Net.exe
+      - ```./QQWry.Net.exe```
     - Linux
-      - ```./```
+      - ```sudo chmod +x ./QQWry.Net```
+      - ```./QQWry.Net```
 - 源码编译方式
+    1. [下载安装 dotnet8-sdk](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)
+    2. ```git clone https://github.com/nsnail/QQWry.Net.git```
+    3. ```dotnet run --project ./QQWry.Net/src/QQWry.Net/QQWry.Net.csproj```
+- 运行截图
+    - ![](./docs/screenshot.png)
