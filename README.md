@@ -21,15 +21,23 @@
   - ```docker run -p 61022:61022 nsnail2/qqwry.net```
 - 二进制文件方式
     - 下载地址
-      - [Release](https://github.com/nsnail/QQWry.Net/releases)
+      - https://github.com/nsnail/QQWry.Net/releases
     - Windows
       - ```./QQWry.Net.exe```
     - Linux
       - ```sudo chmod +x ./QQWry.Net```
       - ```./QQWry.Net```
 - 源码编译方式
-    1. [下载安装 dotnet8-sdk](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)
-    2. ```git clone https://github.com/nsnail/QQWry.Net.git```
-    3. ```dotnet run --project ./QQWry.Net/src/QQWry.Net/QQWry.Net.csproj```
+    1. 下载安装 .NET8 SDK
+       - https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0
+    2. 克隆仓库
+       - ```git clone https://github.com/nsnail/QQWry.Net.git```
+    3. 编译运行
+       - ```dotnet run --project ./QQWry.Net/src/QQWry.Net/QQWry.Net.csproj```
+- 查询IP归属地
+  - http://localhost:61022/?ip=8.8.8.8
 - 运行截图
-    - ![](./docs/screenshot.png)
+    - 浏览器界面
+      - ![](./docs/browser.png)
+    - 服务端界面
+      - ![](./docs/screenshot.png)
