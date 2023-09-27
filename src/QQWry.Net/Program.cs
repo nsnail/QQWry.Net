@@ -4,8 +4,10 @@ using QQWry.Net;
 Banner.Show();
 
 var builder = WebApplication.CreateBuilder(args);
+_ = builder.Services.AddCors();
 builder.WebHost.ConfigureKestrel(x => x.ListenAnyIP(61022));
-var app    = builder.Build();
+var app = builder.Build();
+_ = app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 var logger = app.Services.GetRequiredService<ILogger<Program>>();
 
 logger.LogInformation("正在加载数据...");
