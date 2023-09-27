@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9D8A35AE-092E-4184-A3A6-DB68A220092C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "qqwry", "src\qqwry\qqwry.csproj", "{06C8BC2D-5A32-42A2-8FD2-BCB7C99C1BD1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QQWry.Net", "src\QQWry.Net\QQWry.Net.csproj", "{06C8BC2D-5A32-42A2-8FD2-BCB7C99C1BD1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "meta", "meta", "{5198A03D-0CAC-4828-A807-34A693F73859}"
 	ProjectSection(SolutionItems) = preProject
@@ -15,12 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "meta", "meta", "{5198A03D-0
 		.tgitconfig = .tgitconfig
 		code.quality.props = code.quality.props
 		Directory.Build.props = Directory.Build.props
+		dot.clean.cmd = dot.clean.cmd
 		git.pr.ps1 = git.pr.ps1
 		git.rc.ps1 = git.rc.ps1
 		global.json = global.json
 		LICENSE = LICENSE
 		nuget.config = nuget.config
-		qqwry.sln.DotSettings = qqwry.sln.DotSettings
+		QQWry.Net.sln.DotSettings = QQWry.Net.sln.DotSettings
 		README.md = README.md
 		stylecop.analyzers.ruleset = stylecop.analyzers.ruleset
 		StyleCop.json = StyleCop.json

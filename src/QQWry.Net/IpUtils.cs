@@ -1,7 +1,7 @@
 using System.Reflection;
 using System.Text;
 
-namespace qqwry;
+namespace QQWry.Net;
 
 /// <summary>
 ///     IP工具类
@@ -19,7 +19,7 @@ internal sealed class IpUtils
     {
         Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         using var sr = new StreamReader( //
-            Assembly.GetExecutingAssembly().GetManifestResourceStream("qqwry.qqwrt-20230920.txt")!
+            Assembly.GetExecutingAssembly().GetManifestResourceStream("QQWry.Net.qqwrt-20230920.txt")!
           , Encoding.GetEncoding("gbk"));
 
         while (!sr.EndOfStream) {

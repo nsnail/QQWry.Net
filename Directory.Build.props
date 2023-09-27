@@ -8,9 +8,9 @@
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <ImplicitUsings>enable</ImplicitUsings>
         <MinVerDefaultPreReleaseIdentifiers>beta</MinVerDefaultPreReleaseIdentifiers>
-        <Product>qqwry</Product>
+        <Product>QQWry.Net</Product>
         <RepositoryType>git</RepositoryType>
-        <RepositoryUrl>https://github.com/nsnail/qqwry.git</RepositoryUrl>
+        <RepositoryUrl>https://github.com/nsnail/QQWry.Net.git</RepositoryUrl>
         <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
         <Title>$(AssemblyName)</Title>
     </PropertyGroup>

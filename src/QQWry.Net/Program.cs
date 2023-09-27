@@ -1,8 +1,11 @@
 using System.Diagnostics;
-using qqwry;
+using QQWry.Net;
+
+Banner.Show();
 
 var app    = WebApplication.CreateBuilder(args).Build();
 var logger = app.Services.GetRequiredService<ILogger<Program>>();
+
 logger.LogInformation("正在加载数据...");
 var sw = new Stopwatch();
 sw.Start();
