@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "meta", "meta", "{5198A03D-0
 		benchmark.jmx = benchmark.jmx
 		build.ps1 = build.ps1
 		code.quality.props = code.quality.props
+		CONTRIBUTING.md = CONTRIBUTING.md
 		Directory.Build.props = Directory.Build.props
 		Dockerfile = Dockerfile
 		dot.clean.cmd = dot.clean.cmd
@@ -24,12 +25,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "meta", "meta", "{5198A03D-0
 		global.json = global.json
 		image.optimize.csx = image.optimize.csx
 		LICENSE = LICENSE
+		minver.targets = minver.targets
 		nuget.config = nuget.config
 		QQWry.Net.sln.DotSettings = QQWry.Net.sln.DotSettings
 		README.md = README.md
 		stylecop.analyzers.ruleset = stylecop.analyzers.ruleset
 		StyleCop.json = StyleCop.json
-		sync.metafiles.csx = sync.metafiles.csx
+		sync.sln.files.csx = sync.sln.files.csx
 	EndProjectSection
 EndProject
 Global

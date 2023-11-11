@@ -1,3 +1,5 @@
+#pragma warning disable CA1848
+
 using System.Diagnostics;
 using QQWry.Net;
 
@@ -37,7 +39,6 @@ app.MapGet("/", async context => {
     await context.Response.WriteAsJsonAsync(new Result(region == null ? -1 : 0, ipStr, region));
 });
 app.Run();
-return;
 
 static Result ErrorResult(string ipStr = null)
 {

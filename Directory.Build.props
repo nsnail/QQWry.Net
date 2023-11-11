@@ -1,12 +1,20 @@
+<!-- 注意此文件名大小写不可变更 -->
 <Project>
     <PropertyGroup>
-        <!--        $(XXX) 定义有顺序 排序请注意-->
         <SolutionDir>$(MSBuildThisFileDirectory)</SolutionDir>
+    </PropertyGroup>
+    <Import Project="$(SolutionDir)/minver.targets"/>
+    <PropertyGroup>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <Authors>nsnail</Authors>
         <BaseIntermediateOutputPath>$(SolutionDir)/dist/$(MSBuildProjectName)/obj</BaseIntermediateOutputPath>
         <BaseOutputPath>$(SolutionDir)/dist/$(MSBuildProjectName)/bin</BaseOutputPath>
+        <Copyright>© 2006-2023 nsnail</Copyright>
+        <Description>基于纯真IP数据库的高性能（亚毫秒级响应时间、10w+QPS 吞吐量）IP归属地查询 WebApi 服务</Description>
         <EnableBaseIntermediateOutputPathMismatchWarning>false</EnableBaseIntermediateOutputPathMismatchWarning>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <ImplicitUsings>enable</ImplicitUsings>
+        <LangVersion>preview</LangVersion>
         <MinVerDefaultPreReleaseIdentifiers>beta</MinVerDefaultPreReleaseIdentifiers>
         <Product>QQWry.Net</Product>
         <RepositoryType>git</RepositoryType>
@@ -15,7 +23,7 @@
         <Title>$(AssemblyName)</Title>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="MinVer" Version="5.0.0-alpha.1">
+        <PackageReference Include="MinVer" Version="5.0.0-beta.1">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>

@@ -19,7 +19,7 @@ internal sealed class IpUtils
     {
         Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         using var sr = new StreamReader( //
-            Assembly.GetExecutingAssembly().GetManifestResourceStream("QQWry.Net.qqwrt-20231004.txt")!
+            Assembly.GetExecutingAssembly().GetManifestResourceStream("QQWry.Net.qqwrt.dat")!
           , Encoding.GetEncoding("gbk"));
 
         while (!sr.EndOfStream) {
