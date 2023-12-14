@@ -55,7 +55,7 @@ nunit-*.xml
 dlldata.c
 
 # Benchmark Results
-BenchmarkDotNet.Artifacts/
+BenchmarkQQWry.NetNet.Artifacts/
 
 # .NET Core
 project.lock.json
@@ -130,12 +130,12 @@ $tf/
 # ReSharper is a .NET coding add-in
 _ReSharper*/
 *.[Rr]e[Ss]harper
-*.DotSettings.user
+*.QQWry.NetSettings.user
 
 # TeamCity is a build add-in
 _TeamCity*
 
-# DotCover is a Code Coverage Tool
+# QQWry.NetCover is a Code Coverage Tool
 *.dotCover
 
 # AxoCover is a Code Coverage Tool
@@ -400,6 +400,7 @@ FodyWeavers.xsd
 
 # User Define
 dist/
-refs/
 *.[Dd]esigner.cs
 *.db
+cache
+/assets/res/Ln.resx

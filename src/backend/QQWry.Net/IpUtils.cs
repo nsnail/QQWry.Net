@@ -1,21 +1,17 @@
 using System.Reflection;
-using System.Text;
 
 namespace QQWry.Net;
 
 /// <summary>
 ///     IP工具类
 /// </summary>
-internal sealed class IpUtils
+public static class IpUtils
 {
-    private const    int                      _CAPACITY   = 600000;
-    private readonly List<uint>               _arrStart   = new(_CAPACITY);
-    private readonly Dictionary<uint, string> _ipDatabase = new(_CAPACITY);
+    private const           int                      _CAPACITY   = 600000;
+    private static readonly List<uint>               _arrStart   = new(_CAPACITY);
+    private static readonly Dictionary<uint, string> _ipDatabase = new(_CAPACITY);
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="IpUtils" /> class.
-    /// </summary>
-    public IpUtils()
+    static IpUtils()
     {
         Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         using var sr = new StreamReader( //
@@ -33,7 +29,7 @@ internal sealed class IpUtils
     /// <summary>
     ///     数据量
     /// </summary>
-    public int DataCount => _ipDatabase.Count;
+    public static int DataCount => _ipDatabase.Count;
 
     /// <summary>
     ///     IP地址转UInt32
@@ -46,13 +42,21 @@ internal sealed class IpUtils
     /// <summary>
     ///     查询IP归属地
     /// </summary>
-    public string Query(uint ip)
+    public static string Query(uint ip)
     {
         var index = FindStartIndex(ip);
-        return _ipDatabase[_arrStart[index]];
+        return index < 0 ? null : _ipDatabase[_arrStart[index]];
     }
 
-    private int FindStartIndex(uint ip)
+    /// <summary>
+    ///     查询IP归属地
+    /// </summary>
+    public static string Query(string ip)
+    {
+        return Query(IpV4ToUInt32(ip));
+    }
+
+    private static int FindStartIndex(uint ip)
     {
         var left  = 0;
         var right = _arrStart.Count - 1;
