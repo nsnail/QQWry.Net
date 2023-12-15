@@ -37,7 +37,7 @@
     2. 克隆仓库
         - ```git clone https://github.com/nsnail/QQWry.Net.git```
     3. 编译运行
-        - ```dotnet run --project ./QQWry.Net/src/QQWry.Net/QQWry.Net.csproj```
+        - ```dotnet run --project ./QQWry.Net/src/QQWry.Net.WebApi/QQWry.Net.WebApi.csproj```
 - 查询IP归属地
     - http://localhost:61022/?ip=8.8.8.8
 - 运行截图

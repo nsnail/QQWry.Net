@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <PackageProjectUrl>https://github.com/nsnail/QQWry.Net.git</PackageProjectUrl>
+    </PropertyGroup>
+    <Import Project="$(SolutionDir)/build/code.quality.props"/>
+    <Import Project="$(SolutionDir)/build/nuget.package.props"/>
+    <Import Project="$(SolutionDir)/build/copy.pkg.xml.comment.files.targets"/>
+    <Import Project="$(SolutionDir)/build/prebuild.targets"/>
+    <ItemGroup>
+        <EmbeddedResource Include="../../../assets/qqwrt.dat"/>
+    </ItemGroup>
+    <ItemGroup>
+        <None Update="*.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+</Project>

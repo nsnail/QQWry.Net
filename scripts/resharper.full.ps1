@@ -1,0 +1,1 @@
+jb cleanupcode --no-build ../QQWry.Net.sln

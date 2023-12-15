@@ -1,0 +1,14 @@
+{
+  "version": "2.0.3",
+  "devDependencies": {
+    "cz-git": "^1.7.1",
+    "commitizen": "^4.3.0",
+    "prettier": "^3.1.0",
+    "standard-version": "^9.5.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  }
+}

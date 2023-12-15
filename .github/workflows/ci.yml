@@ -1,0 +1,43 @@
+name: CI
+on:
+  push:
+    tags:
+      - v*
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          filter: tree:0
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x
+      - working-directory: ./src/backend/QQWry.Net
+        run: dotnet build -c Release -f net6.0
+      - working-directory: ./src/backend/QQWry.Net
+        run: dotnet build -c Release -f net7.0
+      - working-directory: ./src/backend/QQWry.Net
+        run: dotnet build -c Release -f net8.0
+      - working-directory: ./src/backend/QQWry.Net
+        run: dotnet pack -c Release --no-build
+      - uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/v}
+      - run: dotnet nuget push ./dist/backend/QQWry.Net/bin/Release/QQWry.Net.${{ steps.get_version.outputs.VERSION }}.nupkg --skip-duplicate --api-key ${{ secrets.NUGET_TOKEN }} --source https://api.nuget.org/v3/index.json
+      - working-directory: ./src/backend/QQWry.Net.WebApi
+        run: dotnet publish -c Release -f net8.0
+      - run: docker build -t nsnail/qqwry.net .
+      - uses: docker/login-action@v3
+        with:
+          username: "nsnail"
+          password: "${{secrets.DOCKER_PASSWORD}}"
+      - run: docker push nsnail/qqwry.net

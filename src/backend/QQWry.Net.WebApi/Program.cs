@@ -1,6 +1,5 @@
 #pragma warning disable CA1848
 
-using System.Diagnostics;
 using QQWry.Net;
 
 Banner.Show();
@@ -12,12 +11,7 @@ var app = builder.Build();
 _ = app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 var logger = app.Services.GetRequiredService<ILogger<Program>>();
 
-logger.LogInformation("正在加载数据...");
-var sw = new Stopwatch();
-sw.Start();
-var ipUtils = new IpUtils();
-sw.Stop();
-logger.LogInformation("已加载 {DataCount} 条 in {UsedTime}ms", ipUtils.DataCount, sw.ElapsedMilliseconds);
+logger.LogInformation("已加载 {DataCount} 条IP数据", IpUtils.DataCount);
 
 app.MapGet("/", async context => {
     var ipStr = context.Request.Query["ip"].FirstOrDefault();
@@ -35,7 +29,7 @@ app.MapGet("/", async context => {
         return;
     }
 
-    var region = ipUtils.Query(ip);
+    var region = IpUtils.Query(ip);
     await context.Response.WriteAsJsonAsync(new Result(region == null ? -1 : 0, ipStr, region));
 });
 app.Run();

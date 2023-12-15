@@ -3,36 +3,71 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9D8A35AE-092E-4184-A3A6-DB68A220092C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C84EB5A0-37AD-4B17-A51E-E36888C4441E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QQWry.Net", "src\QQWry.Net\QQWry.Net.csproj", "{06C8BC2D-5A32-42A2-8FD2-BCB7C99C1BD1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{4DAF9366-855F-46BB-AE4C-660C92FA0697}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "meta", "meta", "{5198A03D-0CAC-4828-A807-34A693F73859}"
 	ProjectSection(SolutionItems) = preProject
+		.commitlintrc.js = .commitlintrc.js
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
-		.tgitconfig = .tgitconfig
-		benchmark.jmx = benchmark.jmx
-		build.ps1 = build.ps1
-		code.quality.props = code.quality.props
-		CONTRIBUTING.md = CONTRIBUTING.md
 		Directory.Build.props = Directory.Build.props
 		Dockerfile = Dockerfile
-		dot.clean.cmd = dot.clean.cmd
-		git.pr.ps1 = git.pr.ps1
-		git.rc.ps1 = git.rc.ps1
+		dotnet-tools.json = dotnet-tools.json
 		global.json = global.json
-		image.optimize.csx = image.optimize.csx
+		key.snk = key.snk
 		LICENSE = LICENSE
-		minver.targets = minver.targets
 		nuget.config = nuget.config
+		package.json = package.json
 		QQWry.Net.sln.DotSettings = QQWry.Net.sln.DotSettings
 		README.md = README.md
-		stylecop.analyzers.ruleset = stylecop.analyzers.ruleset
-		StyleCop.json = StyleCop.json
-		sync.sln.files.csx = sync.sln.files.csx
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{BB0B25C9-0901-4923-913F-00F9A6B352A5}"
+	ProjectSection(SolutionItems) = preProject
+		clean.ln.csx = scripts/clean.ln.csx
+		code.clean.csx = scripts/code.clean.csx
+		code.clean.ps1 = scripts/code.clean.ps1
+		gen.cs.tt = scripts/gen.cs.tt
+		gen.ln.cmd = scripts/gen.ln.cmd
+		gen.resx.tt = scripts/gen.resx.tt
+		git.pr.ps1 = scripts/git.pr.ps1
+		git.rc.ps1 = scripts/git.rc.ps1
+		image.optimize.csx = scripts/image.optimize.csx
+		install.as.tpl.ps1 = scripts/install.as.tpl.ps1
+		rename.csx = scripts/rename.csx
+		resharper.full.ps1 = scripts/resharper.full.ps1
+		switcher.nsext.json = scripts/switcher.nsext.json
+		switcher.ps1 = scripts/switcher.ps1
+		sync.sln.files.csx = scripts/sync.sln.files.csx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{1129FE25-466B-4F4F-85FC-3752664245E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{3C6F049E-3EE8-4D66-9AFF-E8A369032487}"
+	ProjectSection(SolutionItems) = preProject
+		ci.yml = .github/workflows/ci.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{8E4C93BA-9493-4892-80C4-5E174C504829}"
+	ProjectSection(SolutionItems) = preProject
+		code.quality.props = build/code.quality.props
+		copy.pkg.xml.comment.files.targets = build/copy.pkg.xml.comment.files.targets
+		minver.targets = build/minver.targets
+		nuget.package.props = build/nuget.package.props
+		prebuild.targets = build/prebuild.targets
+		stylecop.analyzers.ruleset = build/stylecop.analyzers.ruleset
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QQWry.Net", "src\backend\QQWry.Net\QQWry.Net.csproj", "{1E62C322-EE42-4699-A6F1-791C53EFA62D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QQWry.Net.Tests", "src\backend\QQWry.Net.Tests\QQWry.Net.Tests.csproj", "{00604162-C444-478B-B773-3AB23C856CA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QQWry.Net.WebApi", "src\backend\QQWry.Net.WebApi\QQWry.Net.WebApi.csproj", "{72B6D5F2-671D-41D0-B743-688BFC6B0154}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QQwry.Net.Console", "src\backend\QQwry.Net.Console\QQwry.Net.Console.csproj", "{B23762F4-C6F0-4F1A-A3F0-53D36976EFE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,12 +78,29 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{06C8BC2D-5A32-42A2-8FD2-BCB7C99C1BD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06C8BC2D-5A32-42A2-8FD2-BCB7C99C1BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06C8BC2D-5A32-42A2-8FD2-BCB7C99C1BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06C8BC2D-5A32-42A2-8FD2-BCB7C99C1BD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E62C322-EE42-4699-A6F1-791C53EFA62D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E62C322-EE42-4699-A6F1-791C53EFA62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E62C322-EE42-4699-A6F1-791C53EFA62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E62C322-EE42-4699-A6F1-791C53EFA62D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00604162-C444-478B-B773-3AB23C856CA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00604162-C444-478B-B773-3AB23C856CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00604162-C444-478B-B773-3AB23C856CA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00604162-C444-478B-B773-3AB23C856CA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72B6D5F2-671D-41D0-B743-688BFC6B0154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72B6D5F2-671D-41D0-B743-688BFC6B0154}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72B6D5F2-671D-41D0-B743-688BFC6B0154}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72B6D5F2-671D-41D0-B743-688BFC6B0154}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B23762F4-C6F0-4F1A-A3F0-53D36976EFE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B23762F4-C6F0-4F1A-A3F0-53D36976EFE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B23762F4-C6F0-4F1A-A3F0-53D36976EFE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B23762F4-C6F0-4F1A-A3F0-53D36976EFE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{06C8BC2D-5A32-42A2-8FD2-BCB7C99C1BD1} = {9D8A35AE-092E-4184-A3A6-DB68A220092C}
+		{4DAF9366-855F-46BB-AE4C-660C92FA0697} = {C84EB5A0-37AD-4B17-A51E-E36888C4441E}
+		{3C6F049E-3EE8-4D66-9AFF-E8A369032487} = {1129FE25-466B-4F4F-85FC-3752664245E1}
+		{1E62C322-EE42-4699-A6F1-791C53EFA62D} = {4DAF9366-855F-46BB-AE4C-660C92FA0697}
+		{00604162-C444-478B-B773-3AB23C856CA7} = {4DAF9366-855F-46BB-AE4C-660C92FA0697}
+		{72B6D5F2-671D-41D0-B743-688BFC6B0154} = {4DAF9366-855F-46BB-AE4C-660C92FA0697}
+		{B23762F4-C6F0-4F1A-A3F0-53D36976EFE6} = {4DAF9366-855F-46BB-AE4C-660C92FA0697}
 	EndGlobalSection
 EndGlobal
