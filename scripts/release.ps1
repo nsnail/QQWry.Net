@@ -1,3 +1,4 @@
+cd ..
 $types = @{
     '1' = @('major', '主版本')
     '2' = @('minor', '此版本')
@@ -11,6 +12,7 @@ while ($null -eq $types[$prefix])
 git checkout main
 git branch -D release
 git checkout -b release
-../node_modules/.bin/standard-version -r $types[$prefix][0] -i ../CHANGELOG.md --packageFiles ../package.json
+./node_modules/.bin/standard-version -r $types[$prefix][0]
 git push --follow-tags --force origin release
 Start-Process -FilePath "https://github.com/nsnail/QQWry.Net/compare/main...release"
+cd ./scripts
