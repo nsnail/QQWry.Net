@@ -37,6 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{BB0B
 		git.rc.ps1 = scripts/git.rc.ps1
 		image.optimize.csx = scripts/image.optimize.csx
 		install.as.tpl.ps1 = scripts/install.as.tpl.ps1
+		release.ps1 = scripts/release.ps1
 		rename.csx = scripts/rename.csx
 		resharper.full.ps1 = scripts/resharper.full.ps1
 		switcher.nsext.json = scripts/switcher.nsext.json
