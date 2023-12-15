@@ -1,4 +1,4 @@
-﻿#pragma warning disable CA1848
+#pragma warning disable CA1848
 
 using QQWry.Net;
 
