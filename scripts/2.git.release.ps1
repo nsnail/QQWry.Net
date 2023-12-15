@@ -16,3 +16,8 @@ git checkout -b release
 git push --follow-tags --force origin release
 Start-Process -FilePath "https://github.com/nsnail/QQWry.Net/compare/main...release"
 cd ./scripts
+Write-Host "按『Enter』回到主分支，『Ctrl+C』退出"
+Pause
+git checkout main
+git pull
+git branch -D release
