@@ -8,8 +8,9 @@ while ($null -eq $types[$prefix])
 {
     $prefix = Read-Host "请选择版本类型`n" $( & { param($i) $i | ForEach-Object { "$_ : $( $types[$_][0] )（$( $types[$_][1] )）`n" } } $types.Keys | Sort-Object )
 }
-git branch -d release
+git checkout main
+git branch -D release
 git checkout -b release
-../node_modules/.bin/standard-version -r $prefix
+../node_modules/.bin/standard-version -r $types[$prefix][0] -i ../CHANGELOG.md --packageFiles ../package.json
 git push --follow-tags --force origin release
-Start-Process -FilePath "https://github.com/nsnail/QQWry.Net.git/compare/main...release"
+Start-Process -FilePath "https://github.com/nsnail/QQWry.Net/compare/main...release"
