@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.4](https://github.com/nsnail/QQWry.Net/compare/v2.0.3...v2.0.4) (2024-01-15)
+
 ### [2.0.3](https://github.com/nsnail/QQWry.Net/compare/v2.0.2...v2.0.3) (2023-12-15)
 
 ### [2.0.2](https://github.com/nsnail/QQWry.Net/compare/v2.0.1...v2.0.2) (2023-12-15)
