@@ -51,9 +51,25 @@ public static class IpUtils
     /// <summary>
     ///     查询IP归属地
     /// </summary>
+    public static IEnumerable<(uint Ip, string Region)> Query(IEnumerable<uint> ip)
+    {
+        return ip.Select(x => (x, Query(x)));
+    }
+
+    /// <summary>
+    ///     查询IP归属地
+    /// </summary>
     public static string Query(string ip)
     {
         return Query(IpV4ToUInt32(ip));
+    }
+
+    /// <summary>
+    ///     UInt32转IP地址
+    /// </summary>
+    public static string UInt32ToIpV4(uint ipUint)
+    {
+        return string.Join('.', BitConverter.GetBytes(ipUint).Reverse());
     }
 
     private static int FindStartIndex(uint ip)
